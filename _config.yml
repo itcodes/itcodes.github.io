@@ -3,11 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 优弧
-subtitle: ''
-description: ''
+title: 优弧的博客
+subtitle: 但行好事，莫问前程
+description: 但行好事，莫问前程
 keywords:
-author: 优弧
+  - 字节
+  - 掘金
+author: 优弧的博客
 language: zh-CN
 timezone: Asia/Shanghai
 
