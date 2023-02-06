@@ -1,4 +1,3 @@
-<a href="https://app.daily.dev/CatFly"><img src="https://api.daily.dev/devcards/bea2fbf6508b4eb9ae8535e9f0994ea8.png?r=zie" width="400" alt="CatFly's Dev Card"/></a>
 ## Hi! There is 优弧 <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"></h2>
 
 <!--
