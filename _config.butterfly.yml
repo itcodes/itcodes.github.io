@@ -432,8 +432,8 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text: Hi, welcome to my <a href="https://itcodes.github.io/">blog</a>!
-  copyright: false # Copyright of theme and framework
+  custom_text:  # Hi, welcome to my <a href="https://itcodes.github.io/">blog</a>!
+  copyright: true # Copyright of theme and framework
 
 # Analysis
 # --------------------------------------
