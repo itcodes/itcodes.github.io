@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://itcodes.github.io/073f915ba8d8/</loc>
+    <loc>https://itcodes.github.io/d744d1d3d1e8/</loc>
     
     <lastmod>2023-02-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/cee8f61e406f/</loc>
+    <loc>https://itcodes.github.io/d494564da8a5/</loc>
     
     <lastmod>2023-02-09</lastmod>
     
@@ -55,6 +55,27 @@
   </url>
 
   
+  <url>
+    <loc>https://itcodes.github.io/tags/OPenAI/</loc>
+    <lastmod>2023-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/tags/Chatgpt/</loc>
+    <lastmod>2023-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://itcodes.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2023-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
