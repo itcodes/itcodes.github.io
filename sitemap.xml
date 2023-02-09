@@ -2,45 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/3f3b54571180/</loc>
+    <loc>https://itcodes.github.io/f2b0fcb72c89/</loc>
     
-    <lastmod>2023-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/ade68400c406/</loc>
-    
-    <lastmod>2023-02-06</lastmod>
+    <lastmod>2023-02-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://itcodes.github.io/1ea14c57f04a/</loc>
     
-    <lastmod>2023-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/link/index.html</loc>
-    
-    <lastmod>2023-02-06</lastmod>
+    <lastmod>2023-02-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://itcodes.github.io/categories/index.html</loc>
     
-    <lastmod>2023-02-06</lastmod>
+    <lastmod>2023-02-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/link/index.html</loc>
+    
+    <lastmod>2023-02-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/tags/index.html</loc>
+    
+    <lastmod>2023-02-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -48,8 +48,8 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
-    <lastmod>2023-02-06</lastmod>
+    <loc>https://itcodes.github.io/</loc>
+    <lastmod>2023-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
