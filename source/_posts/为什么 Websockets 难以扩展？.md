@@ -1,7 +1,6 @@
 ---
-title: OpenAI 推出超神 ChatGPT 注册攻略来了
+title: 为什么 Websockets 难以扩展？
 date: 2023-02-10 14:18:31
-cover: https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31f892d642024d5fb33a6f61acc66907~tplv-k3u1fbpfcp-zoom-1.png
 categories:
   - 掘金翻译计划
 tags:
