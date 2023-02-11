@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>为什么 Websockets 难以扩展？ | 优弧的博客</title><meta name="author" content="优弧"><meta name="copyright" content="优弧"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原文地址：3 Uncommon Bash Tricks That You Should Know 原文作者：Adam Green 译文出自：掘金翻译计划    优秀的开发人员往往键入的内容更少 —— 这也让他们能够：  更快地工作 更准确地工作 减少错误 减轻双手疲劳的压力  一种减少键入的方法是恰当地使用你的命令行（通常是 Bash），而本文将要向大家介绍的内容就是 —— 3 个减少键入的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么 Websockets 难以扩展？">
+<meta property="og:url" content="https://itcodes.github.io/9d12a10bc4b2/index.html">
+<meta property="og:site_name" content="优弧的博客">
+<meta property="og:description" content="原文地址：3 Uncommon Bash Tricks That You Should Know 原文作者：Adam Green 译文出自：掘金翻译计划    优秀的开发人员往往键入的内容更少 —— 这也让他们能够：  更快地工作 更准确地工作 减少错误 减轻双手疲劳的压力  一种减少键入的方法是恰当地使用你的命令行（通常是 Bash），而本文将要向大家介绍的内容就是 —— 3 个减少键入的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/8282645?v=4">
+<meta property="article:published_time" content="2023-02-11T07:07:56.204Z">
+<meta property="article:modified_time" content="2023-02-11T07:07:56.204Z">
+<meta property="article:author" content="优弧">
+<meta property="article:tag" content="掘金翻译计划">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/8282645?v=4"><link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/8282645?v=4"><link rel="canonical" href="https://itcodes.github.io/9d12a10bc4b2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 优弧","link":"链接: ","source":"来源: 优弧的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '为什么 Websockets 难以扩展？',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-11 15:07:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="优弧的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/8282645?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="优弧的博客"><img class="site-icon" src="https://avatars.githubusercontent.com/u/8282645?v=4"/><span class="site-name">优弧的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">为什么 Websockets 难以扩展？<a class="post-edit-link" href="https://github.com/itcodes/itcodes.github.io/edit/main/source/_posts/3 个鲜为人知的 Bash 技巧.md" rel="external nofollow noreferrer" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-11T07:07:56.204Z" title="发表于 2023-02-11 15:07:56">2023-02-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-11T07:07:56.204Z" title="更新于 2023-02-11 15:07:56">2023-02-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/">掘金翻译计划</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="为什么 Websockets 难以扩展？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<ul>
+<li>原文地址：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://medium.com/better-programming/3-uncommon-bash-tricks-that-you-should-know-c0fc988065c7">3 Uncommon Bash Tricks That You Should Know</a></li>
+<li>原文作者：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://medium.com/@adgefficiency">Adam Green</a></li>
+<li>译文出自：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner">掘金翻译计划</a></li>
+</ul>
+</blockquote>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/844cc41835fd48bc9ccf800174c5efc2~tplv-k3u1fbpfcp-zoom-1.image" alt="图源 Matera，摄于意大利"></p>
+<p>优秀的开发人员往往键入的内容更少 —— 这也让他们能够：</p>
+<ul>
+<li>更快地工作</li>
+<li>更准确地工作</li>
+<li>减少错误</li>
+<li>减轻双手疲劳的压力</li>
+</ul>
+<p>一种减少键入的方法是恰当地使用你的命令行（通常是 Bash），<strong>而本文将要向大家介绍的内容就是 —— 3 个减少键入的 Bash 技巧。</strong></p>
+<p>本文中介绍的 3 个 Bash 技巧是：</p>
+<ol>
+<li>使用 <code>&#123;a,b&#125;</code> —— 扩展参数，以避免再次键入单个命令</li>
+<li>使用 <code>$_</code> —— 访问最后一个参数，以避免从最后一个命令中重新键入</li>
+<li>使用 <code>^old^new</code> —— 快速更改最后一条命令的一部分</li>
+</ol>
+<p>所有这些技巧都与 zsh 兼容。</p>
+<p><strong>本文输入的命令均以 <code>$</code> 开头。对于命令行解析后的代码，我将在相关代码下面以不带 <code>$</code> 的单独一行写出这句代码等同的解析后的代码。</strong></p>
+<h2 id="a-b-拓展参数"><a href="#a-b-拓展参数" class="headerlink" title="{a,b} 拓展参数"></a><code>&#123;a,b&#125;</code> 拓展参数</h2><p>当我们在编写命令时，我们常会重复输入同一个命令。</p>
+<p>以更改文件后缀为例，我们一般使用的是 <code>mv</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> README.txt README.md</span><br></pre></td></tr></table></figure>
+
+<p>注意到我们写了两次 README，而参数扩展就可以避免这种重复 —— 更改文件的后缀而无需输入 README 两次：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> README.&#123;txt,md&#125;</span><br><span class="line"><span class="built_in">mv</span> README.txt README.md</span><br></pre></td></tr></table></figure>
+
+<p>我们使用的参数扩展为 <code>&#123;txt,md&#125;</code>，而它将会扩展为两个参数 —— <code>txt md</code>（会以空格分隔）。</p>
+<p><strong>参数扩展会为花括号内，以逗号分割的每个元素分别创建一个参数：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> &#123;1,2,3&#125;</span><br><span class="line">1 2 3</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> pre&#123;1,2,3&#125;</span><br><span class="line">pre1 pre2 pre3</span><br></pre></td></tr></table></figure>
+
+<p>空元素将创建不带任何替换项的参数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> pre&#123;,1,2&#125;fix</span><br><span class="line">prefix pre1fix pre2fix</span><br></pre></td></tr></table></figure>
+
+<p>另一个例子 —— 我们将要把 <code>data</code> 文件夹中的 <code>models</code> 文件夹重命名为 <code>ml</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> data/models data/ml</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用参数扩展来节省重新输入 <code>data/</code>  的时间：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> data/&#123;models,ml&#125;</span><br><span class="line"><span class="built_in">mv</span> data/models data/ml</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用带有数字序列的参数扩展 —— 这在创建顺序编号目录时很有用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> data&#123;0..2&#125;</span><br><span class="line"><span class="built_in">mkdir</span> data0 data1 data2</span><br></pre></td></tr></table></figure>
+
+<p>我们还可以在<strong>参数内部进行参数扩展</strong> —— 例如，更改路径中的文件夹名称：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> models/&#123;baseline,final&#125;/data.csv</span><br><span class="line"><span class="built_in">cat</span> models/baseline/data.csv models/final/data.csv</span><br></pre></td></tr></table></figure>
+
+<p>最后一个示例：在 <code>mv</code> 命令中，我们使用了 3 个参数 —— 将两个 Python 文件移动到 tests 文件夹中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> test_unit.py test_system.py tests</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><strong>每当你在单个命令中多次键入某些内容时，参数扩展极大可能可以帮助你节省精力。</strong></p>
+<h2 id="使用-使用访问最后一个参数"><a href="#使用-使用访问最后一个参数" class="headerlink" title="使用 $_ 使用访问最后一个参数"></a>使用 <code>$_</code> 使用访问最后一个参数</h2><p>终端由一系列命令操作构成，而我们经常在多个命令之间重用信息。</p>
+<p>如果说我们前面的技巧，参数扩展，是用于减少在单个命令上的键入的。那么现在这个技巧则是用于减少对多个命令的键入。</p>
+<p>以创建文件夹并将当前目录转移到其中的情况为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> temp</span><br><span class="line">$ <span class="built_in">cd</span> temp</span><br></pre></td></tr></table></figure>
+
+<p>现在我们其实可以通过使用 <code>$_</code> <strong>将上个命令的参数传递过来</strong>，避免让自己重复键入同样的内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> temp    </span><br><span class="line">$ <span class="built_in">cd</span> <span class="variable">$_</span> </span><br><span class="line"><span class="built_in">cd</span> temp </span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，我们使用了 <code>$_</code> 访问上一个命令的最后一个参数，在本例中这个参数为 <code>temp</code>。</p>
+<p>想要重用上一个命令的最后一个参数（本例中为 <code>temp</code>）的场景其实非常普遍，以至于 Bash 会将其存储在一个特殊的变量 <code>_</code> 中。我们需要使用 <code>$</code> 前缀来访问它（与 <code>$PATH</code> 或 <code>$HOME</code> 相同）。</p>
+<p>下面是使用 <code>$_</code> 的另一个示例 —— 移动文件并借助 <code>cat</code> 使用打印内容到 <code>STDOUT</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> main.py src/main.py </span><br><span class="line">$ <span class="built_in">cat</span> src/main.py</span><br></pre></td></tr></table></figure>
+
+<p>那么现在我们该如何再次重用最后一个参数 <code>src/main.py</code>？</p>
+<p>你可以使用以下命令重写此代码，<code>$_</code> 在第二个命令中会自动替换为 <code>src/main.py</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mv</span> main.py src/main.py </span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$_</span></span><br><span class="line"><span class="built_in">cat</span> src/main.py</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>$_</code> 意味着你不需要重写复杂的文件路径，从而不会在重新键入时出错。</p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p><strong>每当你需要在多个命令重复键入某些内容时，使用 <code>$_</code> 可能有助于减轻疲惫的双手的压力。</strong></p>
+<h2 id="使用-old-new-快速替换"><a href="#使用-old-new-快速替换" class="headerlink" title="使用 ^old^new 快速替换"></a>使用 <code>^old^new</code> 快速替换</h2><p>有时，我们可能在命令行管理程序中运行了一个命令，并很快意识到自己在命令中犯了一个错误。</p>
+<p>但其实我们无需再次键入命令，我们可以使用快速替换，通过更换上一个命令中的内容来修复错误。</p>
+<p>举个例子 —— 你希望通过 ssh 连接到服务器，并运行了命令去连接 —— 运行后才意识到用户名应该是 user 而非 ubuntu！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh ubuntu@198.compute.com</span><br></pre></td></tr></table></figure>
+
+<p>你可以<strong>使用快速替换来更改所需的部分</strong>，而不必再次重新键入整个命令以在此处将 ubuntu 改为 user：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ^ubuntu^user</span><br><span class="line">ssh user@198.compute.com</span><br></pre></td></tr></table></figure>
+
+<p>快速替换的格式是 <code>^old^new</code>，等效于：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ !!:s/old/new</span><br></pre></td></tr></table></figure>
+
+<p><code>!!</code> 用于获取最后一个命令，而 <code>:s</code> 是替换的正则表达式。我想你会同意 <code>^old^new</code> 减轻了不少工作负担！</p>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p><strong>当你写错了命令，并且命令不方便重写（例如很长），那么，使用 <code>^old^new</code> 能够极大的减轻你的麻烦。</strong></p>
+<hr>
+<p>感谢阅读！</p>
+<blockquote>
+<p>如果发现译文存在错误或其他需要改进的地方，欢迎到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner">掘金翻译计划</a> 对译文进行修改并 PR，也可获得相应奖励积分。文章开头的 <strong>本文永久链接</strong> 即为本文在 GitHub 上的 MarkDown 链接。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://juejin.im/">掘金</a> 上的英文分享文章。内容覆盖 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#android">Android</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#ios">iOS</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E5%89%8D%E7%AB%AF">前端</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E5%90%8E%E7%AB%AF">后端</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E4%BA%A7%E5%93%81">产品</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E8%AE%BE%E8%AE%A1">设计</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/xitu/gold-miner">掘金翻译计划</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="http://weibo.com/juejinfanyi">官方微博</a>、<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/juejinfanyi">知乎专栏</a>。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://itcodes.github.io">优弧</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://itcodes.github.io/9d12a10bc4b2/">https://itcodes.github.io/9d12a10bc4b2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://itcodes.github.io" target="_blank">优弧的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/">掘金翻译计划</a></div><div class="post_share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/8282645?v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/c330db873f9c/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/db6667c5bbb2/" title="为什么 Websockets 难以扩展？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-10</div><div class="title">为什么 Websockets 难以扩展？</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/8282645?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">优弧</div><div class="author-info__description">但行好事，莫问前程</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/itcodes"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/itcodes" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:izhangwen@outlook.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">但行好事，莫问前程</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#a-b-%E6%8B%93%E5%B1%95%E5%8F%82%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">{a,b} 拓展参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.1.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-%E4%BD%BF%E7%94%A8%E8%AE%BF%E9%97%AE%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">使用 $_ 使用访问最后一个参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">2.1.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-old-new-%E5%BF%AB%E9%80%9F%E6%9B%BF%E6%8D%A2"><span class="toc-number">3.</span> <span class="toc-text">使用 ^old^new 快速替换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="toc-number">3.1.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/9d12a10bc4b2/" title="为什么 Websockets 难以扩展？">为什么 Websockets 难以扩展？</a><time datetime="2023-02-11T07:07:56.204Z" title="发表于 2023-02-11 15:07:56">2023-02-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/c330db873f9c/" title="Hello World">Hello World</a><time datetime="2023-02-11T07:07:56.204Z" title="发表于 2023-02-11 15:07:56">2023-02-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/db6667c5bbb2/" title="为什么 Websockets 难以扩展？">为什么 Websockets 难以扩展？</a><time datetime="2023-02-10T06:18:31.000Z" title="发表于 2023-02-10 14:18:31">2023-02-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/d744d1d3d1e8/" title="OpenAI 推出超神 ChatGPT 注册攻略来了">OpenAI 推出超神 ChatGPT 注册攻略来了</a><time datetime="2023-02-06T07:58:31.000Z" title="发表于 2023-02-06 15:58:31">2023-02-06</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%)"><div id="footer-wrap"><div class="copyright">&copy;2023 By 优弧</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadUtterances () {
+  let ele = document.createElement('script')
+  ele.setAttribute('id', 'utterances_comment')
+  ele.setAttribute('src', 'https://utteranc.es/client.js')
+  ele.setAttribute('repo', 'itcodes/itcodes.github.io')
+  ele.setAttribute('issue-term', 'pathname')
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+  ele.setAttribute('theme', nowTheme)
+  ele.setAttribute('crossorigin', 'anonymous')
+  ele.setAttribute('async', 'true')
+  document.getElementById('utterances-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function utterancesTheme () {
+  const iframe = document.querySelector('.utterances-frame')
+  if (iframe) {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    const message = {
+      type: 'set-theme',
+      theme: theme
+    };
+    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+}
+
+if ('Utterances' === 'Utterances' || !false) {
+  if (false) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+  else loadUtterances()
+} else {
+  function loadOtherComment () {
+    loadUtterances()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body></html>
