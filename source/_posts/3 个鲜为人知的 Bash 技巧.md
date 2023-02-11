@@ -1,5 +1,5 @@
 ---
-title: 为什么 Websockets 难以扩展？
+title: 3 个鲜为人知的 Bash 技巧
 date: 
 categories:
   - 掘金翻译计划
