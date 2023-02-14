@@ -2,33 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://itcodes.github.io/f1e488a9fcb5/</loc>
-    
-    <lastmod>2023-02-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcodes.github.io/d744d1d3d1e8/</loc>
-    
-    <lastmod>2023-02-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcodes.github.io/db6667c5bbb2/</loc>
-    
-    <lastmod>2023-02-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://itcodes.github.io/categories/index.html</loc>
     
     <lastmod>2023-02-14</lastmod>
@@ -48,6 +21,33 @@
   
   <url>
     <loc>https://itcodes.github.io/tags/index.html</loc>
+    
+    <lastmod>2023-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/46074557add8/</loc>
+    
+    <lastmod>2023-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/d744d1d3d1e8/</loc>
+    
+    <lastmod>2023-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/db6667c5bbb2/</loc>
     
     <lastmod>2023-02-14</lastmod>
     
