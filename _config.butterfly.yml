@@ -10,7 +10,7 @@ menu:
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
-  友接: /link/ || fas fa-link
+  友链: /link/ || fas fa-link
   # About: /about/ || fas fa-heart
 
 nav:
