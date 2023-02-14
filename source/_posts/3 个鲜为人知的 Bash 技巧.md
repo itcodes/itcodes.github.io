@@ -1,6 +1,7 @@
 ---
 title: 3 个鲜为人知的 Bash 技巧
 date: 
+cover: https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/844cc41835fd48bc9ccf800174c5efc2~tplv-k3u1fbpfcp-zoom-1.image
 categories:
   - 掘金翻译计划
 tags:
@@ -9,9 +10,6 @@ tags:
 > * 原文地址：[3 Uncommon Bash Tricks That You Should Know](https://medium.com/better-programming/3-uncommon-bash-tricks-that-you-should-know-c0fc988065c7)
 > * 原文作者：[Adam Green](https://medium.com/@adgefficiency)
 > * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-
-
-![图源 Matera，摄于意大利](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/844cc41835fd48bc9ccf800174c5efc2~tplv-k3u1fbpfcp-zoom-1.image)
 
 优秀的开发人员往往键入的内容更少 —— 这也让他们能够：
 
