@@ -2,25 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://itcodes.github.io/link/index.html</loc>
-    
-    <lastmod>2023-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcodes.github.io/tags/index.html</loc>
-    
-    <lastmod>2023-03-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcodes.github.io/04b71274ce49/</loc>
+    <loc>https://itcodes.github.io/3053841976cd/</loc>
     
     <lastmod>2023-03-26</lastmod>
     
@@ -65,7 +47,34 @@
   </url>
   
   <url>
+    <loc>https://itcodes.github.io/096fdba65075/</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://itcodes.github.io/categories/index.html</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/link/index.html</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/tags/index.html</loc>
     
     <lastmod>2023-03-26</lastmod>
     
@@ -105,6 +114,13 @@
   
   <url>
     <loc>https://itcodes.github.io/tags/Chatgpt/</loc>
+    <lastmod>2023-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/tags/New-Bing/</loc>
     <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
