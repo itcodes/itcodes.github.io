@@ -1,7 +1,7 @@
 ---
 title: 3 个鲜为人知的 Bash 技巧
 date: 2023-02-14 17:53:43
-cover: https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/844cc41835fd48bc9ccf800174c5efc2~tplv-k3u1fbpfcp-zoom-1.image
+cover: https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1280&q=80
 categories:
   - 掘金翻译计划
 tags:
