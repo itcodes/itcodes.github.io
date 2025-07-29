@@ -1,7 +1,7 @@
 ---
 title: OpenAI 推出超神 ChatGPT 注册攻略来了
 date: 2023-02-06 15:58:31
-cover: 
+cover: https://cdn.pixabay.com/photo/2023/01/26/22/13/ai-generated-7747323_1280.jpg 
 categories:
   - 人工智能
 tags:

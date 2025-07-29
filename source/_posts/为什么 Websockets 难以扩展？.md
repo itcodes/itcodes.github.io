@@ -1,6 +1,7 @@
 ---
 title: 为什么 Websockets 难以扩展？
 date: 2023-02-10 14:18:31
+cover: https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_1280.jpg
 categories:
   - 掘金翻译计划
 tags:
