@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://itcodes.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://itcodes.github.io/link/index.html</loc>
     
     <lastmod>2025-09-07</lastmod>
@@ -11,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/tags/index.html</loc>
+    <loc>https://itcodes.github.io/categories/index.html</loc>
     
     <lastmod>2025-09-07</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/47f80ddb16a9/</loc>
+    <loc>https://itcodes.github.io/f0faddf60cbc/</loc>
     
     <lastmod>2025-09-07</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/f0faddf60cbc/</loc>
+    <loc>https://itcodes.github.io/47f80ddb16a9/</loc>
     
     <lastmod>2025-09-07</lastmod>
     
@@ -56,15 +65,6 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/d8c2edb4f3dc/</loc>
-    
-    <lastmod>2025-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://itcodes.github.io/d744d1d3d1e8/</loc>
     
     <lastmod>2025-09-07</lastmod>
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/db6667c5bbb2/</loc>
+    <loc>https://itcodes.github.io/d8c2edb4f3dc/</loc>
     
     <lastmod>2025-09-07</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/categories/index.html</loc>
+    <loc>https://itcodes.github.io/db6667c5bbb2/</loc>
     
     <lastmod>2025-09-07</lastmod>
     
@@ -117,13 +117,6 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/tags/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</loc>
-    <lastmod>2025-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://itcodes.github.io/tags/OPenAI/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -132,6 +125,13 @@
   
   <url>
     <loc>https://itcodes.github.io/tags/Chatgpt/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcodes.github.io/tags/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -161,14 +161,14 @@
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/categories/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</loc>
+    <loc>https://itcodes.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://itcodes.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>https://itcodes.github.io/categories/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</loc>
     <lastmod>2025-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
